@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model School {
+  id        Int    @id @default(autoincrement())
+  name      String @db.VarChar(255)
+  address   String @db.VarChar(255)
+  latitude  Float  @db.Float
+  longitude Float  @db.Float
+}
