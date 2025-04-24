@@ -12,6 +12,7 @@ const PORT = process.env.PORT;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+console.log(process.env.DATABASE_URL);
 app.use("/api/schools", schoolRoutes);
 
 app.get("/", (req, res) => {
