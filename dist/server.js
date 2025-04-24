@@ -7,10 +7,11 @@ const app = express();
 const PORT = process.env.PORT;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+console.log(process.env.DATABASE_URL);
 app.use("/api/schools", schoolRoutes);
 app.get("/", (req, res) => {
     res.send("Welcome to the School API");
 });
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on http://localhosts:${PORT}`);
 });
